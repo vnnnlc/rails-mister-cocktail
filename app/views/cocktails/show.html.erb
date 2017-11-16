@@ -1,0 +1,22 @@
+<div class="banner-container">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://source.unsplash.com/random'); height: 50vh; background-position: center;">
+    <h1 class="text-center"><%= @cocktail.name %></h1>
+  </div>
+</div>
+<div class="header-cocktail">
+  <div class="container">
+
+    <div class="cocktail-info">
+      <div class="row">
+        <% @cocktail.doses.each do |dose| %>
+        <div class="col-sm-3">
+          <div class="cocktail-description">
+            <h5><%= dose.ingredient.name %></h5>
+            <p><%= dose.description %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

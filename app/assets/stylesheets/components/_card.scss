@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  color: white;
+  height: 250px;
+  max-height: 300px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 5px;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+.card-description h2, p {
+  margin: 0;
+}
+.card-description p {
+  margin-top: 3px;
+  font-weight: lighter;
+}
+.card-a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.card-a:hover {
+  background: black;
+  opacity: .1;
+}

@@ -8,15 +8,21 @@
 require "open-uri"
 require "json"
 
+puts "Seeding DB with cocktails"
+
 url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 file_json = open(url).read
 json = JSON.parse(file_json)
 
+puts json
+
 drinks = json["drinks"]
 
+puts drinks
+
 drinks.each do |ingredient|
+  puts ingredient
   Ingredient.create!(name: ingredient["strIngredient1"])
-  Cocktail.create!(name: ingredient["strDrink"])
 end
 
 

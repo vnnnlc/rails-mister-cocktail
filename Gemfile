@@ -58,3 +58,6 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem "cocoon"
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+gem 'figaro'

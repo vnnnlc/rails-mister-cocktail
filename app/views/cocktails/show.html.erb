@@ -9,13 +9,16 @@
     <div class="cocktail-info">
       <div class="row">
         <% @cocktail.doses.each do |dose| %>
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <div class="cocktail-description">
             <h5><%= dose.ingredient.name %></h5>
             <p><%= dose.description %></p>
           </div>
         </div>
         <% end %>
+        <%= link_to 'Add ingredient', edit_cocktail_path(@cocktail) %>
+        <br>
+        <%= link_to 'Back', cocktails_path %>
       </div>
     </div>
   </div>

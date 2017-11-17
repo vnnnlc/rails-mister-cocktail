@@ -21,9 +21,22 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def edit
+    @cocktail = Cocktail.find(params[:id])
+  end
+
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    if @cocktail.update(cocktail_permitted)
+      redirect_to @cocktail
+    else
+      render "edit"
+    end
+  end
+
   private
 
   def cocktail_permitted
-    params.require(:cocktail).permit(:name, doses_attributes: [:ingredient_id, :description])
+    params.require(:cocktail).permit(:name, doses_attributes: [:ingredient_id, :description, :_destroy, :id])
   end
 end

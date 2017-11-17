@@ -1,0 +1,24 @@
+<div class="container">
+  <%= simple_form_for @cocktail do |f| %>
+  <% if @cocktail.errors.any? %>
+  <div id="error-explanation">
+    <ul>
+      <% @cocktail.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.input :name, label: 'Cocktail Name', placeholder: 'Margarita' %>
+  <h6>Add Doses</h6>
+  <div id="doses">
+    <%=  f.simple_fields_for :doses do |dose|%>
+    <%= render 'dose_fields', f: dose %>
+    <% end %>
+    <div class="links">
+     <%= link_to_add_association 'add dose', f, :doses %>
+   </div>
+ </div>
+ <%= f.submit %>
+ <% end %>
+</div>

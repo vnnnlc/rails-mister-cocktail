@@ -1,5 +1,5 @@
 <div class="banner-container">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://source.unsplash.com/random'); height: 50vh; background-position: center;">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>'); height: 50vh; background-position: center;">
     <h1 class="text-center"><%= @cocktail.name %></h1>
   </div>
 </div>
@@ -16,9 +16,9 @@
           </div>
         </div>
         <% end %>
-        <%= link_to 'Add ingredient', edit_cocktail_path(@cocktail) %>
+        <%= link_to 'Add ingredient', edit_cocktail_path(@cocktail), class: "btn btn-danger" %>
         <br>
-        <%= link_to 'Back', cocktails_path %>
+        <%= link_to 'Back', cocktails_path, class: "btn btn-danger" %>
       </div>
     </div>
   </div>

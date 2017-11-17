@@ -1,9 +1,16 @@
-
+<div class="banner landing" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://source.unsplash.com/random'); height: 100vh; background-position: center;">
+  <div class="header-title text-center">
+    <h1>ONLY COCKTAILS LEFT ALIVE</h1>
+  </div>
+  <div class="button-landing text-center">
+    <%= link_to "Browse the cocktails", "#cocktails-display", class: "btn btn-danger" %>
+  </div>
+</div>
 <div class="container" id="cocktails-display">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-4">
-      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%), url('https://source.unsplash.com/random/400x400');">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>');">
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
         </div>
@@ -12,10 +19,7 @@
     </div>
     <% end %>
   </div>
-  <div class="button-add", align="center">
+  <div class="button-add">
     <%= link_to "Add a cocktail", new_cocktail_path(@cocktail), class: "btn btn-danger" %>
   </div>
 </div>
-
-
-<%= %>
